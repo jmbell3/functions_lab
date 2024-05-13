@@ -36,7 +36,7 @@ const isAdult = (num) => {
 
 
 
-console.log('Exercise 2 Result:', isAdult(21));
+console.log('Exercise 2 Result:', isAdult(22));
 
 /*
 Exercise 3: isCharAVowel()
@@ -48,9 +48,18 @@ Example: isCharAVowel('a') should return true.
 Complete the exercise in the space below:
 */
 
+function isCharAVowel(char){
+ 
+  if (char = ['a', 'e', 'i','o', 'u'].includes(char)) { //includes checks to see if any character is present inside 
+    return 'true';
+  } else {
+    return 'false';
+  }
+}
 
 
-console.log('Exercise 3 Result:', isCharAVowel("a"));
+
+console.log('Exercise 3 Result:', isCharAVowel("h"));
 
 /*
 Exercise 4: generateEmail()
@@ -62,6 +71,9 @@ Example: generateEmail('johnsmith', 'example.com') should return 'johnsmith@exam
 Complete the exercise in the space below:
 */
 
+function generateEmail (name, domain){
+  return `${name}@${domain}`; //dollar sign adds together. //dollar sign prints name in the console log. returns the value
+} 
 
 
 console.log('Exercise 4 Result:', generateEmail("johnsmith", "example.com"));
@@ -75,10 +87,23 @@ Example: greetUser('Sam', 'morning') should return "Good morning, Sam!"
 
 Complete the exercise in the space below:
 */
+   
+  function greetuser(name,timeofday){ // two parameters required that will store arguements sam and morning
 
 
-
-console.log('Exercise 5 Result:', greetUser("Sam", "morning"));
+    switch(timeofday){ // switch to moring since it is an arguments. Prints greeting good morning
+    case 'morning': greeting = 'Good Morning';
+    break;
+    case 'afternoon': greeting = 'Good Afternoon';
+    break;
+    case 'evening': greeting = 'Good evening';
+    break;
+    
+    }
+    return `${greeting}, ${name}`;
+    
+    }
+    console.log('Exercise 5 Result:', greetuser('sam','morning'));
 /*
 Exercise 6: reverseString()
 
@@ -88,6 +113,12 @@ Example: reverseString('rockstar') should return the string "ratskcor".
 
 Complete the exercise in the space below:
 */
+
+function reverseString(str){  //calls the funciton from console log. //rockstar is stored in the paramenter
+    return str.split('').reverse().join(''); // .split('') ' r o c k s t a r ' .reverse() switches the code . join brings the leters come together
+}
+    console.log(reverseString('rockstar')); // rockstar is stored into string
+  
 
 
 
@@ -105,9 +136,12 @@ Example: checkPalindrome('taco') should return false.
 Complete the exercise in the space below:
 */
 
+function checkPalindrome(str){ // palindrome means it remains the same word front to back
+  return str === str.split('').reverse().join('');  // return prints values on the display // stric equals makes it become boolean
+}
 
 
-console.log('Exercise 7 Result:', checkPalindrome("radar"));
+console.log('Exercise 7 Result:', checkPalindrome("radar"), checkPalindrome ('taco'));
 
 /*
 Exercise 8: maxOfThree()
@@ -119,9 +153,11 @@ Example: maxOfThree(17, 4, 9) should return 17.
 Complete the exercise in the space below:
 */
 
+function maxOfThree(num1, num2, num3){ //three parameters for three numbers
+    return Math.max(num1,num2, num3); //Math.max is a method in js that shows highest number  
+}
 
-
-console.log('Exercise 8 Result:', maxOfThree(5, 10, 8));
+console.log('Exercise 8 Result:', maxOfThree(5, 10, 8)); /*arguments are 5,10,8*/
 /*
 Exercise 9: calculateTip()
 
@@ -132,9 +168,14 @@ Example: calculateTip(50, 20) should return 10.
 Complete the exercise in the space below:
 */
 
+function calculateTip(billAmount, tipPercentage) // function is calculateTip, Parameters are billAmount, tipPercntage
+{
+  let tipAmount = (billAmount * tipPercentage)/ 100;  // created a let variable for tipAmount becaue billamount and tip percentage will change. // Created a math equation to calculate tip. 
+  
+  return tipAmount; 
+}
 
-
-console.log('Exercise 9 Result:', calculateTip(50, 20));
+console.log('Exercise 9 Result:', calculateTip(50, 20)); // 50 and 20, are the arguements for the parameters
 
 /*
 Exercise 10: convertTemperature()
@@ -146,6 +187,13 @@ Example: convertTemperature(32, 'F') should return 0 (Celsius).
 
 Complete the exercise in the space below:
 */
+
+function convertTemperature(temperature, 'str')
+
+if ('str' === 'C'){
+  return temperature + 32;
+}
+else
 
 
 
